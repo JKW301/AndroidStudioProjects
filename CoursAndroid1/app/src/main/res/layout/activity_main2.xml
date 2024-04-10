@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2"
+    android:background="@color/esgi"
+    >
+
+    <LinearLayout
+        android:id="@+id/newLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="0dp"
+        android:orientation="vertical"
+        android:padding="0dp"
+        tools:ignore="ExtraText">
+
+    <!-- Autres éléments existants dans votre mise en page -->
+    <androidx.constraintlayout.utils.widget.MotionLabel
+        android:id="@+id/newLayouter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="0dp"
+        android:text="Cours d'Android"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        android:text="Dura Lex, Sed Lex"
+        android:layout_marginBottom="6dp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        />
+    <TextView
+        android:id="@+id/name_receiver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="6dp"
+        android:textColor="@color/white"
+        />
+        <EditText
+            android:id="@+id/履歴書"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="履歴書"
+            android:textColorHint="#C6C6C6"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/セーブ"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill"
+                android:layout_weight="0.45"
+                android:text="セーブする"
+                android:layout_marginRight="5dp"
+                />
+
+
+            <Button
+                android:id="@+id/消し"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill"
+                android:layout_weight="0.45"
+                android:layout_marginLeft="5dp"
+                android:text="消す" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+

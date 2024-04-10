@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CoursAndroid1</string>
+    <string name="pop_title">Question</string>
+    <string name="pop_content">Give up ?</string>
+    <string name="pop_oui">Yes</string>
+    <string name="pop_non">Yes</string>
+</resources>

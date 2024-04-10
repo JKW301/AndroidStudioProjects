@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/cardview_dark_background"
+    >
+
+    <LinearLayout
+        android:id="@+id/formLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="0dp"
+        android:background="@android:color/background_dark"
+        android:orientation="vertical"
+        android:padding="0dp"
+        tools:ignore="ExtraText">
+
+        <!-- Autres éléments existants dans votre mise en page -->
+        <androidx.constraintlayout.utils.widget.MotionLabel
+            android:id="@+id/startNfcButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="0dp"
+            android:text="Cours d'Android"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="0dp"
+            android:text="Dura Lex, Sed Lex"
+            android:layout_marginBottom="6dp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            />
+        <TextView
+            android:id="@+id/nfcDataTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/startNfcButton"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="0dp"
+            android:text=" "
+            android:layout_marginBottom="6dp"
+            android:textColor="@color/white"
+            />
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:hint="Type d'aliments"
+            android:src="@drawable/cats"
+            android:scaleType="centerCrop"
+            />
+
+        <TextView
+            android:id="@+id/labelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-20dp"
+            android:layout_marginStart="142dp"
+            android:layout_marginBottom="16dp"
+            android:text="Placez la puce au dos du smartphone"
+            android:textColor="#058dfc"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:gravity="center"
+            tools:context=".MainActivity">
+
+            <Button
+                android:id="@+id/KLICK"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25"
+                android:text="Toaster" />
+
+            <Button
+                android:id="@+id/mich"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.30"
+                android:text="トースト"
+                android:layout_marginRight="2.5dp"
+                android:layout_marginLeft="2.5dp"
+                />
+
+            <Button
+                android:id="@+id/clique"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill"
+                android:layout_weight="0.40"
+                android:text="送信" />
+        </LinearLayout>
+
+
+        <!-- Champ de saisie pour le type d'aliments -->
+        <EditText
+            android:id="@+id/名前"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="名前"
+            android:textColorHint="#C6C6C6"
+            />
+
+        <!-- Champ de saisie pour la date limite de consommation (DLC) -->
+        <EditText
+            android:id="@+id/生年月日"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="生年月日"
+            android:textColorHint="#C6C6C6"
+            />
+
+        <!-- Boutons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+            <!-- Bouton "Générer le Tag" -->
+
+            <!-- Bouton "Jab To Tag" -->
+            <Button
+                android:id="@+id/ボタン"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill"
+                android:layout_weight="0.45"
+                android:text="ボタン"
+                android:layout_marginRight="5dp"
+                />
+
+
+            <Button
+                android:id="@+id/jabToTag"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill"
+                android:layout_weight="0.45"
+                android:layout_marginLeft="5dp"
+                android:text="Jab To Tag" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

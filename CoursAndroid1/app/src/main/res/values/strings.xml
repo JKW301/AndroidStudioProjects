@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CoursAndroid1</string>
+    <string name="pop_title">Question</string>
+    <string name="pop_content">Quitter l\'application ?</string>
+    <string name="pop_oui">Oui</string>
+    <string name="pop_non">Non</string>
+</resources>
