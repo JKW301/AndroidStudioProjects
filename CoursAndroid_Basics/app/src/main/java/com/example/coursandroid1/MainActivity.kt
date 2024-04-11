@@ -7,9 +7,10 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.activity.ComponentActivity
 import androidx.appcompat.app.AlertDialog
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : ComponentActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,10 +29,10 @@ class MainActivity : AppCompatActivity() {
         var popup = AlertDialog.Builder(this)
         popup.setTitle(getString(R.string.pop_title))
         popup.setMessage(getString(R.string.pop_content))
-        popup.setPositiveButton(getString(R.string.pop_oui)){dialog, which ->
+        popup.setPositiveButton(getString(R.string.pop_oui)) { dialog, which ->
             finish() //pour fermer l'activity courant : donc le Main
         }
-        popup.setNegativeButton(getString(R.string.pop_non)){dialog, which ->
+        popup.setNegativeButton(getString(R.string.pop_non)) { dialog, which ->
             dialog.dismiss()
         }
         popup.setCancelable(false)
@@ -42,21 +43,22 @@ class MainActivity : AppCompatActivity() {
             var i = Intent(this, MainActivity2::class.java)
 
             var edt_n = findViewById<EditText>(R.id.名前)
-            var contenu:String = edt_n.text.toString()
-            if(contenu > "") { //ou if(contenu.length>0)
+            var contenu: String = edt_n.text.toString()
+            if (contenu > "") { //ou if(contenu.length>0)
                 startActivity(i)
                 Toast.makeText(applicationContext, "ようこそ $contenu", Toast.LENGTH_SHORT).show()
             } else {
-                edt_n.error="Nom requis"
-                Toast.makeText(applicationContext, "Erreur : champs vide !", Toast.LENGTH_SHORT).show()
+                edt_n.error = "Nom requis"
+                Toast.makeText(applicationContext, "Erreur : champs vide !", Toast.LENGTH_SHORT)
+                    .show()
             }
         }
 
         var ボタン = findViewById<Button>(R.id.ボタン)
-        ボタン.setOnClickListener{
+        ボタン.setOnClickListener {
             var edt_n = findViewById<EditText>(R.id.名前)
-            var contenu:String = edt_n.text.toString()
-            var i = Intent(this,MainActivity2::class.java)
+            var contenu: String = edt_n.text.toString()
+            var i = Intent(this, MainActivity2::class.java)
             i.putExtra("nom", contenu)
             startActivity(i)
         }
