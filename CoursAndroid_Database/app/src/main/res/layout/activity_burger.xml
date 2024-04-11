@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardview_dark_background"
+
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@android:dimen/app_icon_size"
+        android:layout_marginRight="@android:dimen/app_icon_size"
+        android:text="BURGER"
+        android:textColor="@color/white"
+        android:textSize="@android:dimen/app_icon_size" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="274dp"
+        android:src="@drawable/burger" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ajouter un burger à la bdd"
+        android:textColor="@color/white"
+        android:layout_marginLeft="50dp"
+        />
+    <EditText
+        android:id="@+id/edt_burger_nom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:text="Nom"
+        android:textColor="@color/white"
+        />
+    <EditText
+        android:id="@+id/edt_burger_prix"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:text="Prix"
+        android:textColor="@color/white"
+        />
+    <EditText
+        android:id="@+id/edt_burger_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        android:textColor="@color/white"
+        />
+    <Button
+        android:id="@+id/rec_burger"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enregistrer"
+        />
+    </LinearLayout>
+
+
+
+</LinearLayout>
