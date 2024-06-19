@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="30dp"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DASHBOARD"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="30dp"
+        />
+
+    <ListView
+        android:layout_marginTop="10dp"
+        android:id="@+id/event_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="359dp" />
+
+    <Button
+        android:id="@+id/profile"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Voir profil" />
+
+    <Button
+        android:id="@+id/nfc_btn"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Scanner un tag NFC" />
+
+</LinearLayout>

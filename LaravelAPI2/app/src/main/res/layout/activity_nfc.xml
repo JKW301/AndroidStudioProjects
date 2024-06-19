@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".nfcActivity"
+    android:background="@color/cardview_dark_background"
+    >
+
+    <!-- Formulaire -->
+    <!-- Formulaire -->
+    <LinearLayout
+        android:id="@+id/formLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="0dp"
+        android:background="@android:color/background_dark"
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:ignore="ExtraText">
+
+        <!-- Autres éléments existants dans votre mise en page -->
+        <androidx.constraintlayout.utils.widget.MotionLabel
+            android:id="@+id/startNfcButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="0dp"
+            android:text="Lecture et Ecriture NFC"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            />
+
+
+
+        <!-- Switch pour activer/désactiver la fonctionnalité -->
+        <Switch
+            android:id="@+id/featureSwitch"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16sp"
+            android:text="Activer le mode écriture"
+            android:checked="false"
+            tools:ignore="UseSwitchCompatOrMaterialXml"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/nfcDataTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/startNfcButton"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="0dp"
+            android:text=" "
+            android:layout_marginBottom="6dp"
+            android:textColor="@color/white"
+            />
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:hint="Type d'aliments"
+            android:src="@drawable/nfcpic"
+            android:scaleType="centerCrop"
+            />
+
+        <TextView
+            android:id="@+id/labelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-20dp"
+            android:layout_marginStart="142dp"
+            android:layout_marginBottom="16dp"
+            android:text="Placez la puce au dos du smartphone"
+            android:textColor="#058dfc"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:gravity="center"
+            tools:context=".nfcActivity">
+
+            <Button
+                android:id="@+id/refreshButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.45"
+                android:text="Réactualiser" />
+
+
+        </LinearLayout>
+
+
+        <!-- Champ de saisie pour le type d'aliments -->
+        <EditText
+            android:id="@+id/foodTypeEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Type d'aliments"
+            android:textColorHint="#C6C6C6"
+            />
+
+        <!-- Champ de saisie pour la date limite de consommation (DLC) -->
+        <EditText
+            android:id="@+id/expiryDateEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Date limite de consommation (YYYY-MM-DD)"
+            android:textColorHint="#C6C6C6"
+            android:focusable="false"
+            />
+
+        <!-- Boutons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="end"
+            android:orientation="horizontal"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="QR Code Scanner"
+            android:id="@+id/qr_btn"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
