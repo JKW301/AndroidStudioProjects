@@ -77,7 +77,6 @@ class nfcActivity : AppCompatActivity() {
         val datePickerDialog = DatePickerDialog(
             this,
             DatePickerDialog.OnDateSetListener { view, selectedYear, selectedMonth, selectedDayOfMonth ->
-                // Mettre à jour le champ de texte avec la date sélectionnée
                 val selectedDate = Calendar.getInstance()
                 selectedDate.set(selectedYear, selectedMonth, selectedDayOfMonth)
                 updateDateInView(selectedDate)
@@ -92,7 +91,7 @@ class nfcActivity : AppCompatActivity() {
     }
 
     private fun updateDateInView(calendar: Calendar) {
-        val myFormat = "yyyy-MM-dd" // Format de date souhaité
+        val myFormat = "yyyy-MM-dd"
         val sdf = SimpleDateFormat(myFormat, Locale.getDefault())
         expiryDateEditText.setText(sdf.format(calendar.time))
     }
@@ -114,17 +113,11 @@ class nfcActivity : AppCompatActivity() {
             showDatePickerDialog()
         }
 
-        // Ajouter un écouteur de clic pour le bouton Refresh
         refreshButton.setOnClickListener {
-            // Effacer le texte de la TextView
             nfcDataTextView.text = ""
         }
 
-        // Récupérer l'intention (Intent) qui a déclenché onNewIntent
-        //val intent = intent
-        //processIntent(intent)
 
-        // Initialisation des autres éléments et variables
         nfcAdapter = NfcAdapter.getDefaultAdapter(this)
         val intent = Intent(this, nfcActivity::class.java).apply {
             addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
@@ -133,26 +126,21 @@ class nfcActivity : AppCompatActivity() {
     }
 
     private fun processIntent(intent: Intent) {
-        // Récupérer le Tag depuis l'intention
         val tag: Tag? = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG)
 
-        // Vérifier l'état du Switch
         if (featureSwitch.isChecked) {
-            // Le Switch est activé (ON) - Traiter l'écriture
             nfcDataTextView.text = ""
             if (tag != null) {
                 writeNfcData(tag)
             }
             readNfcData(tag)
         } else {
-            // Le Switch est désactivé (OFF) - Traiter la lecture
             nfcDataTextView.text = ""
             readNfcData(tag)
         }
     }
     override fun onNewIntent(intent: Intent?) {
         super.onNewIntent(intent)
-        // Récupérer l'intention (Intent) qui a déclenché onNewIntent
         intent?.let { processIntent(it) }
     }
 
@@ -162,19 +150,15 @@ class nfcActivity : AppCompatActivity() {
             ndef.connect()
             val ndefMessage = ndef.ndefMessage
 
-            // Lire le contenu du premier enregistrement du NdefMessage
             val record = ndefMessage.records[0]
             val payload = record.payload
 
-            // Convertir le payload en chaîne de caractères lisible
             val textRead = String(payload)
 
-            // Afficher les informations lues dans le TextView
             nfcDataTextView.text = textRead
 
             ndef.close()
         } catch (e: Exception) {
-            // Gérer les erreurs ici
             //Toast.makeText(this, "Erreur lors de la lecture du tag NFC : ${e.message}", Toast.LENGTH_SHORT).show()
         }
     }
@@ -194,7 +178,6 @@ class nfcActivity : AppCompatActivity() {
             val message = NdefMessage(arrayOf(createTextRecord("", textToWrite)))
             ndef?.writeNdefMessage(message)
 
-            // Lire le contenu après l'écriture
             readNfcData(tag)
 
             ndef?.close()
@@ -213,7 +196,7 @@ class nfcActivity : AppCompatActivity() {
         val recordPayload = ByteArray(1 + langBytes.size + textBytes.size)
 
         recordPayload[0] =
-            0x02.toByte() // status byte: UTF-8 encoding and length of language code is 2
+            0x02.toByte() 
         System.arraycopy(langBytes, 0, recordPayload, 1, langBytes.size)
         System.arraycopy(textBytes, 0, recordPayload, 1 + langBytes.size, textBytes.size)
 
@@ -240,23 +223,17 @@ class nfcActivity : AppCompatActivity() {
 
     // Vérifier DROIT en ECRITURE-----------------------------------------------------------------------------------------------------------
     fun isTagWritable(tag: Tag): Boolean {
-        // Récupère l'instance de Ndef pour le tag NFC
         val ndef = Ndef.get(tag)
-        // Vérifie si le tag NFC prend en charge Ndef
         if (ndef != null) {
             try {
-                // Connecte le tag NFC
                 ndef.connect()
-                // Vérifie si le tag NFC est inscriptible
                 return ndef.isWritable
             } catch (e: Exception) {
-                // Gestion des exceptions
                 e.printStackTrace()
             } finally {
-                // Déconnecte le tag NFC
                 ndef.close()
             }
         }
-        return false // Si le tag NFC ne prend pas en charge Ndef ou s'il y a une erreur, retourne false
+        return false 
     }
 }
